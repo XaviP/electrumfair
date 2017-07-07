@@ -45,7 +45,7 @@ from electrum import keystore
 from electrum.bitcoin import COIN, is_valid, TYPE_ADDRESS
 from electrum.plugins import run_hook
 from electrum.i18n import _
-from electrum.util import (block_explorer, block_explorer_info, format_time,
+from electrumfair.util import (block_explorer, block_explorer_info, format_time,
                            block_explorer_URL, format_satoshis, PrintError,
                            format_satoshis_plain, NotEnoughFunds, StoreDict,
                            UserCancelled)
@@ -62,7 +62,7 @@ from transaction_dialog import show_transaction
 from fee_slider import FeeSlider
 
 
-from electrum import ELECTRUMFAIR_VERSION
+from electrumfair import ELECTRUMFAIR_VERSION
 import re
 
 from util import *

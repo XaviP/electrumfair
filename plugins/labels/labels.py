@@ -9,8 +9,8 @@ import aes
 import base64
 
 import electrum
-from electrum.plugins import BasePlugin, hook
-from electrum.i18n import _
+from electrumfair.plugins import BasePlugin, hook
+from electrumfair.i18n import _
 
 
 

@@ -14,7 +14,7 @@ from electrum_gui.kivy.i18n import _
 from electrum.contacts import Contacts
 from electrum.paymentrequest import InvoiceStore
 from electrum.util import profiler, InvalidPassword
-from electrum.plugins import run_hook
+from electrumfair.plugins import run_hook
 from electrum.util import format_satoshis, format_satoshis_plain
 from electrum.paymentrequest import PR_UNPAID, PR_PAID, PR_UNKNOWN, PR_EXPIRED
 

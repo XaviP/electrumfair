@@ -8,8 +8,8 @@ from electrum_gui.qt.util import *
 from .plugin import TIM_NEW, TIM_RECOVER, TIM_MNEMONIC
 from ..hw_wallet.qt import QtHandlerBase, QtPluginBase
 
-from electrum.i18n import _
-from electrum.plugins import hook, DeviceMgr
+from electrumfair.i18n import _
+from electrumfair.plugins import hook, DeviceMgr
 from electrum.util import PrintError, UserCancelled
 from electrum.wallet import Wallet, Standard_Wallet
 

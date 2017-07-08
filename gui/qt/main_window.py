@@ -43,8 +43,8 @@ import icons_rc
 
 from electrum import keystore
 from electrum.bitcoin import COIN, is_valid, TYPE_ADDRESS
-from electrum.plugins import run_hook
-from electrum.i18n import _
+from electrumfair.plugins import run_hook
+from electrumfair.i18n import _
 from electrumfair.util import (block_explorer, block_explorer_info, format_time,
                            block_explorer_URL, format_satoshis, PrintError,
                            format_satoshis_plain, NotEnoughFunds, StoreDict,
@@ -2350,7 +2350,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
         lang_help = _('Select which language is used in the GUI (after restart).')
         lang_label = HelpLabel(_('Language') + ':', lang_help)
         lang_combo = QComboBox()
-        from electrum.i18n import languages
+        from electrumfair.i18n import languages
         lang_combo.addItems(languages.values())
         try:
             index = languages.keys().index(self.config.get("language",''))

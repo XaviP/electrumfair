@@ -24,7 +24,7 @@
 # SOFTWARE.
 
 from util import *
-from electrum.i18n import _
+from electrumfair.i18n import _
 from electrum.bitcoin import is_address
 
 

@@ -1,7 +1,7 @@
 import time
 from struct import pack
 
-from electrum.i18n import _
+from electrumfair.i18n import _
 from electrum.util import PrintError, UserCancelled
 from electrum.keystore import bip39_normalize_passphrase
 from electrum.bitcoin import EncodeBase58Check

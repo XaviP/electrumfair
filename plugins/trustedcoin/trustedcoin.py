@@ -39,8 +39,8 @@ from electrum.bitcoin import *
 from electrum.mnemonic import Mnemonic
 from electrum import version
 from electrum.wallet import Multisig_Wallet, Deterministic_Wallet, Wallet
-from electrum.i18n import _
-from electrum.plugins import BasePlugin, run_hook, hook
+from electrumfair.i18n import _
+from electrumfair.plugins import BasePlugin, run_hook, hook
 from electrum.util import NotEnoughFunds
 
 # signing_xpub is hardcoded so that the wallet can be restored from seed, without TrustedCoin's server

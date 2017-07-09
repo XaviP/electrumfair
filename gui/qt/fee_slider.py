@@ -1,4 +1,4 @@
-from electrum.i18n import _
+from electrumfair.i18n import _
 
 import PyQt4
 from PyQt4.QtGui import *

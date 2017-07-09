@@ -8,8 +8,8 @@ from functools import partial
 from electrum.bitcoin import (bc_address_to_hash_160, xpub_from_pubkey,
                               public_key_to_bc_address, EncodeBase58Check,
                               TYPE_ADDRESS, TYPE_SCRIPT)
-from electrum.i18n import _
-from electrum.plugins import BasePlugin, hook
+from electrumfair.i18n import _
+from electrumfair.plugins import BasePlugin, hook
 from electrum.transaction import deserialize, Transaction
 from electrum.keystore import Hardware_KeyStore, is_xpubkey, parse_xpubkey
 

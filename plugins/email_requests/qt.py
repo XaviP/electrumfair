@@ -42,9 +42,9 @@ from PyQt4.QtCore import *
 import PyQt4.QtCore as QtCore
 import PyQt4.QtGui as QtGui
 
-from electrum.plugins import BasePlugin, hook
+from electrumfair.plugins import BasePlugin, hook
 from electrum.paymentrequest import PaymentRequest
-from electrum.i18n import _
+from electrumfair.i18n import _
 from electrum_gui.qt.util import EnterButton, Buttons, CloseButton
 from electrum_gui.qt.util import OkButton, WindowModalDialog
 

@@ -36,8 +36,8 @@ from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 import PyQt4.QtCore as QtCore
 
-from electrum.i18n import _, set_language
-from electrum.plugins import run_hook
+from electrumfair.i18n import _, set_language
+from electrumfair.plugins import run_hook
 from electrum import SimpleConfig, Wallet, WalletStorage
 from electrum.paymentrequest import InvoiceStore
 from electrum.contacts import Contacts

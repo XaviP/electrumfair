@@ -8,8 +8,8 @@ import PyQt4.QtCore as QtCore
 import electrum
 from electrum.wallet import Wallet
 from electrum.util import UserCancelled
-from electrum.base_wizard import BaseWizard
-from electrum.i18n import _
+from electrumfair.base_wizard import BaseWizard
+from electrumfair.i18n import _
 
 from seed_dialog import SeedLayout, KeysLayout
 from network_dialog import NetworkChoiceLayout

@@ -1,5 +1,5 @@
 from PyQt4.QtGui import *
-from electrum.i18n import _
+from electrumfair.i18n import _
 
 
 import datetime

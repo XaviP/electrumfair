@@ -32,8 +32,8 @@ from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 import PyQt4.QtCore as QtCore
 
-from electrum import transaction
-from electrum.bitcoin import base_encode
+from electrumfair import transaction
+from electrumfair.bitcoin import base_encode
 from electrumfair.i18n import _
 from electrumfair.plugins import run_hook
 

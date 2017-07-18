@@ -8,7 +8,7 @@ import traceback
 import aes
 import base64
 
-import electrum
+import electrumfairfair
 from electrumfair.plugins import BasePlugin, hook
 from electrumfair.i18n import _
 

@@ -5,8 +5,8 @@ from electrumfair.i18n import _
 import datetime
 from collections import defaultdict
 
-from electrum.util import format_satoshis
-from electrum.bitcoin import COIN
+from electrumfair.util import format_satoshis
+from electrumfair.bitcoin import COIN
 
 import matplotlib
 matplotlib.use('Qt4Agg')

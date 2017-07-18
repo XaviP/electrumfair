@@ -3,18 +3,18 @@ from kivy.factory import Factory
 from kivy.properties import ObjectProperty
 from kivy.lang import Builder
 
-from electrum.util import base_units
+from electrumfair.util import base_units
 from electrumfair.i18n import languages
-from electrum_gui.kivy.i18n import _
+from electrumfair_gui.kivy.i18n import _
 from electrumfair.plugins import run_hook
-from electrum import coinchooser
-from electrum.util import fee_levels
+from electrumfair import coinchooser
+from electrumfair.util import fee_levels
 
 from choice_dialog import ChoiceDialog
 
 Builder.load_string('''
 #:import partial functools.partial
-#:import _ electrum_gui.kivy.i18n._
+#:import _ electrumfair_gui.kivy.i18n._
 
 <SettingsItem@ButtonBehavior+BoxLayout>
     orientation: 'vertical'

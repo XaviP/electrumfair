@@ -6,8 +6,8 @@ import sys
 import platform
 
 from electrumfair.plugins import BasePlugin, hook
-from electrum_gui.qt.util import WaitingDialog, EnterButton, WindowModalDialog
-from electrum.util import print_msg, print_error
+from electrumfair_gui.qt.util import WaitingDialog, EnterButton, WindowModalDialog
+from electrumfair.util import print_msg, print_error
 from electrumfair.i18n import _
 
 from PyQt4.QtGui import *

@@ -7,16 +7,16 @@ import traceback
 from decimal import Decimal
 import threading
 
-import electrum
-from electrum.bitcoin import TYPE_ADDRESS
-from electrum import WalletStorage, Wallet
-from electrum_gui.kivy.i18n import _
-from electrum.contacts import Contacts
-from electrum.paymentrequest import InvoiceStore
-from electrum.util import profiler, InvalidPassword
+import electrumfairfair
+from electrumfair.bitcoin import TYPE_ADDRESS
+from electrumfair import WalletStorage, Wallet
+from electrumfair_gui.kivy.i18n import _
+from electrumfair.contacts import Contacts
+from electrumfair.paymentrequest import InvoiceStore
+from electrumfair.util import profiler, InvalidPassword
 from electrumfair.plugins import run_hook
-from electrum.util import format_satoshis, format_satoshis_plain
-from electrum.paymentrequest import PR_UNPAID, PR_PAID, PR_UNKNOWN, PR_EXPIRED
+from electrumfair.util import format_satoshis, format_satoshis_plain
+from electrumfair.paymentrequest import PR_UNPAID, PR_PAID, PR_UNKNOWN, PR_EXPIRED
 
 from kivy.app import App
 from kivy.core.window import Window
@@ -68,7 +68,7 @@ Label.register('Roboto',
                'gui/kivy/data/fonts/Roboto-Bold.ttf')
 
 
-from electrum.util import base_units
+from electrumfair.util import base_units
 
 
 class ElectrumWindow(App):
@@ -236,7 +236,7 @@ class ElectrumWindow(App):
             self.send_screen.do_clear()
 
     def on_qr(self, data):
-        from electrum.bitcoin import base_decode, is_address
+        from electrumfair.bitcoin import base_decode, is_address
         data = data.strip()
         if is_address(data):
             self.set_URI(data)
@@ -245,7 +245,7 @@ class ElectrumWindow(App):
             self.set_URI(data)
             return
         # try to decode transaction
-        from electrum.transaction import Transaction
+        from electrumfair.transaction import Transaction
         try:
             text = base_decode(data, None, base=43).encode('hex')
             tx = Transaction(text)
@@ -282,7 +282,7 @@ class ElectrumWindow(App):
         self.receive_screen.screen.address = addr
 
     def show_pr_details(self, req, status, is_invoice):
-        from electrum.util import format_time
+        from electrumfair.util import format_time
         requestor = req.get('requestor')
         exp = req.get('exp')
         memo = req.get('memo')

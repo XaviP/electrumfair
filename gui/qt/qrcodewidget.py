@@ -5,7 +5,7 @@ import PyQt4.QtGui as QtGui
 import os
 import qrcode
 
-import electrum
+import electrumfair
 from electrumfair.i18n import _
 from util import WindowModalDialog
 

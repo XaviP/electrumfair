@@ -2,9 +2,9 @@ import time
 from struct import pack
 
 from electrumfair.i18n import _
-from electrum.util import PrintError, UserCancelled
-from electrum.keystore import bip39_normalize_passphrase
-from electrum.bitcoin import EncodeBase58Check
+from electrumfair.util import PrintError, UserCancelled
+from electrumfair.keystore import bip39_normalize_passphrase
+from electrumfair.bitcoin import EncodeBase58Check
 
 
 class GuiMixin(object):

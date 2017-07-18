@@ -41,18 +41,18 @@ import PyQt4.QtCore as QtCore
 
 import icons_rc
 
-from electrum import keystore
-from electrum.bitcoin import COIN, is_valid, TYPE_ADDRESS
+from electrumfair import keystore
+from electrumfair.bitcoin import COIN, is_valid, TYPE_ADDRESS
 from electrumfair.plugins import run_hook
 from electrumfair.i18n import _
 from electrumfair.util import (block_explorer, block_explorer_info, format_time,
                            block_explorer_URL, format_satoshis, PrintError,
                            format_satoshis_plain, NotEnoughFunds, StoreDict,
                            UserCancelled)
-from electrum import Transaction, mnemonic
-from electrum import util, bitcoin, commands, coinchooser
-from electrum import SimpleConfig, paymentrequest
-from electrum.wallet import Wallet, Multisig_Wallet
+from electrumfair import Transaction, mnemonic
+from electrumfair import util, bitcoin, commands, coinchooser
+from electrumfair import SimpleConfig, paymentrequest
+from electrumfair.wallet import Wallet, Multisig_Wallet
 
 from amountedit import AmountEdit, BTCAmountEdit, MyLineEdit, BTCkBEdit
 from network_dialog import NetworkDialog
@@ -87,7 +87,7 @@ class StatusBarButton(QPushButton):
             self.func()
 
 
-from electrum.paymentrequest import PR_UNPAID, PR_PAID, PR_UNKNOWN, PR_EXPIRED
+from electrumfair.paymentrequest import PR_UNPAID, PR_PAID, PR_UNKNOWN, PR_EXPIRED
 
 
 class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
@@ -876,7 +876,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
     def new_payment_request(self):
         addr = self.wallet.get_unused_address()
         if addr is None:
-            from electrum.wallet import Imported_Wallet
+            from electrumfair.wallet import Imported_Wallet
             if not self.wallet.is_deterministic():
                 msg = [
                     _('No more addresses in your wallet.'),
@@ -1991,7 +1991,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
 
 
     def tx_from_text(self, txt):
-        from electrum.transaction import tx_from_str, Transaction
+        from electrumfair.transaction import tx_from_str, Transaction
         try:
             tx = tx_from_str(txt)
             return Transaction(tx)
@@ -2001,7 +2001,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
             return
 
     def read_tx_from_qrcode(self):
-        from electrum import qrscanner
+        from electrumfair import qrscanner
         try:
             data = qrscanner.scan_qr(self.config)
         except BaseException as e:
@@ -2049,7 +2049,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
             self.show_transaction(tx)
 
     def do_process_from_txid(self):
-        from electrum import transaction
+        from electrumfair import transaction
         txid, ok = QInputDialog.getText(self, _('Lookup transaction'), _('Transaction ID') + ':')
         if ok and txid:
             txid = str(txid).strip()
@@ -2200,7 +2200,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
 
     def plot_history_dialog(self):
         try:
-            from electrum.plot import plot_history
+            from electrumfair.plot import plot_history
         except ImportError as e:
             self.show_error(str(e))
             return
@@ -2509,7 +2509,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
         block_ex_combo.currentIndexChanged.connect(on_be)
         gui_widgets.append((block_ex_label, block_ex_combo))
 
-        from electrum import qrscanner
+        from electrumfair import qrscanner
         system_cameras = qrscanner._find_system_cameras()
         qr_combo = QComboBox()
         qr_combo.addItem("Default","default")

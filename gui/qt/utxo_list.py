@@ -25,7 +25,7 @@
 
 from util import *
 from electrumfair.i18n import _
-from electrum.bitcoin import is_address
+from electrumfair.bitcoin import is_address
 
 
 class UTXOList(MyTreeWidget):

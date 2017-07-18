@@ -31,10 +31,10 @@ from decimal import Decimal
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 
-from electrum_gui.qt.util import *
-from electrum_gui.qt.qrcodewidget import QRCodeWidget
-from electrum_gui.qt.amountedit import AmountEdit
-from electrum_gui.qt.main_window import StatusBarButton
+from electrumfair_gui.qt.util import *
+from electrumfair_gui.qt.qrcodewidget import QRCodeWidget
+from electrumfair_gui.qt.amountedit import AmountEdit
+from electrumfair_gui.qt.main_window import StatusBarButton
 from electrumfair.i18n import _
 from electrumfair.plugins import hook
 from trustedcoin import TrustedCoinPlugin, server

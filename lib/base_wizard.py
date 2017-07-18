@@ -358,7 +358,7 @@ class BaseWizard(object):
         self.on_keystore(k)
 
     def create_seed(self):
-        from electrum.mnemonic import Mnemonic
+        from electrumfair.mnemonic import Mnemonic
         seed = Mnemonic('en').make_seed()
         self.opt_bip39 = False
         f = lambda x: self.request_passphrase(seed, x)

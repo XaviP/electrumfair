@@ -5,9 +5,9 @@ from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 import PyQt4.QtCore as QtCore
 
-import electrum
-from electrum.wallet import Wallet
-from electrum.util import UserCancelled
+import electrumfair
+from electrumfair.wallet import Wallet
+from electrumfair.util import UserCancelled
 from electrumfair.base_wizard import BaseWizard
 from electrumfair.i18n import _
 

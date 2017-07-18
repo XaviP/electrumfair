@@ -28,9 +28,9 @@ import webbrowser
 
 from util import *
 from electrumfair.i18n import _
-from electrum.util import block_explorer_URL, format_satoshis, format_time
+from electrumfair.util import block_explorer_URL, format_satoshis, format_time
 from electrumfair.plugins import run_hook
-from electrum.util import timestamp_to_datetime, profiler
+from electrumfair.util import timestamp_to_datetime, profiler
 
 
 TX_ICONS = [

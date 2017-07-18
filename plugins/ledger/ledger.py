@@ -5,13 +5,13 @@ import time
 import sys
 import traceback
 
-import electrum
-from electrum.bitcoin import EncodeBase58Check, DecodeBase58Check, TYPE_ADDRESS, int_to_hex, var_int
+import electrumfairfair
+from electrumfair.bitcoin import EncodeBase58Check, DecodeBase58Check, TYPE_ADDRESS, int_to_hex, var_int
 from electrumfair.i18n import _
 from electrumfair.plugins import BasePlugin, hook
-from electrum.keystore import Hardware_KeyStore, parse_xpubkey
+from electrumfair.keystore import Hardware_KeyStore, parse_xpubkey
 from ..hw_wallet import HW_PluginBase
-from electrum.util import format_satoshis_plain, print_error
+from electrumfair.util import format_satoshis_plain, print_error
 
 try:
     import hid

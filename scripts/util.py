@@ -1,6 +1,6 @@
 import select, time, electrum, Queue
-from electrum import Connection, Interface, SimpleConfig
-from electrum.network import filter_protocol, parse_servers
+from electrumfair import Connection, Interface, SimpleConfig
+from electrumfair.network import filter_protocol, parse_servers
 from collections import defaultdict
 
 # electrumfair.util.set_verbosity(1)

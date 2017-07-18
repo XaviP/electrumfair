@@ -81,8 +81,9 @@ class BaseWizard(object):
             ('2fa', _("Wallet with two-factor authentication")),
             ('multisig',  _("Multi-signature wallet")),
             ('imported',  _("Watch Bitcoin addresses")),
+            ('restore_from_file', _('Update from electrum-fair 1')),
         ]
-        choices = [pair for pair in wallet_kinds if pair[0] in wallet_types]
+        choices = wallet_kinds
         self.choice_dialog(title=title, message=message, choices=choices, run_next=self.on_wallet_type)
 
     def load_2fa(self):
@@ -101,7 +102,35 @@ class BaseWizard(object):
             action = self.storage.get_action()
         elif choice == 'imported':
             action = 'import_addresses'
+        elif choice == 'restore_from_file':
+            action = 'update_from_file'
         self.run(action)
+
+    def update_from_file(self):
+        import json
+        old_path = os.path.expanduser('~/.electrum-fair/wallets/default_wallet')
+        if os.path.exists(old_path):
+            print "exists old wallet : " + old_path
+            try:
+                with open(old_path, 'r') as f:
+                    data = f.read()
+                result = json.loads(data)
+            except:
+                print "Warning: can not read wallet file"
+            self.storage.put('accounts', result.get('accounts'))
+            self.storage.put('accounts_expanded', result.get('accounts_expanded'))
+            self.storage.put('addr_history', {})
+            self.storage.put('master_private_keys', result.get('master_private_keys'))
+            self.storage.put('master_public_keys', result.get('master_public_keys'))
+            self.storage.put('payment_requests',{})
+            self.storage.put('seed', result.get('seed'))
+            self.storage.put('pruned_txo', {})
+            self.storage.put('seed_version', result.get('seed_version'))
+            self.storage.put('stored_height', '0')
+            self.storage.put('transactions', {})
+            self.storage.put('wallet_type', result.get('wallet_type'))
+            self.wallet_type = result.get('wallet_type')
+            self.on_restore_seed(result.get('seed'), False, False)
 
     def choose_multisig(self):
         def on_multisig(m, n):
@@ -116,7 +145,7 @@ class BaseWizard(object):
         i = len(self.keystores)
         title = _('Add cosigner') + ' (%d of %d)'%(i+1, self.n) if self.wallet_type=='multisig' else _('Keystore')
         if self.wallet_type =='standard' or i==0:
-            message = _('Do you want to create a new seed, or to restore a wallet using an existing seed?')
+            message = _('Do you want to create a new seed, update frome elctrumfair 1 or to restore a wallet using an existing seed?')
             choices = [
                 ('create_seed', _('Create a new seed')),
                 ('restore_from_seed', _('I already have a seed')),
